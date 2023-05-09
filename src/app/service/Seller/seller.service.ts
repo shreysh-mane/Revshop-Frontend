@@ -7,7 +7,7 @@ import { SignUp } from 'src/app/data-type';
   providedIn: 'root'
 })
 export class SellerService {
-  isSellerLoggedIn=new BehaviorSubject();
+  // isSellerLoggedIn=new BehaviorSubject();
 
   constructor(private http:HttpClient) { }
 
