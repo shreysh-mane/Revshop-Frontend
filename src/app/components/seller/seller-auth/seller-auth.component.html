@@ -1,21 +1,23 @@
 <div class="seller-auth">
-    <div >
-      <h1>Seller sign-up</h1>
+    <div class="sign-up">
+      <h1>Seller Sign-Up</h1>
       <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="common-form">
+       <input
+          type="text"
+          class="form-input"
+          placeholder="Enter FirstName"
+          name="firstname"
+          ngModel
+        />
+        
         <input
           type="text"
           class="form-input"
-          placeholder="Enter Name"
-          name="name"
+          placeholder="Enter LastName"
+          name="lastnamename"
           ngModel
         />
-        <input
-          type="password"
-          class="form-input"
-          placeholder="Enter Password"
-          name="password"
-          ngModel
-        />
+
         <input
           type="text"
           class="form-input"
@@ -23,6 +25,15 @@
           name="email"
           ngModel
         />
+
+        <input
+          type="password"
+          class="form-input"
+          placeholder="Enter Password"
+          name="password"
+          ngModel
+        />
+        
         <button class="form-button">Sign Up</button>
         <a class="auth-toggle-link" >Already have account? Click for Login</a>
       </form>

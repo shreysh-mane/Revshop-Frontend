@@ -1,22 +1,21 @@
 import { Injectable } from '@angular/core';
 import{HttpClient} from '@angular/common/http';
-import { SignUp } from 'src/app/data-type';
+import { User } from 'src/app/model/User';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class SellerService {
-  isSellerLoggedIn=new BehaviorSubject();
+  // isSellerLoggedIn=new BehaviorSubject();
 
+  baseURL='http://localhost:9000/revshop/api/'
   constructor(private http:HttpClient) { }
 
-  sellerSignUp(data:SignUp){
-    return this.http.post('http://localhost:8080/seller',
-    data,
-    {observe:'response'}).subscribe((result)=>
-    {
-      console.warn('result',result);
-    });
+  sellerSignUp(data:User):Observable<any>
+  {
+    return this.http.post(this.baseURL+'user/',
+    data,{responseType:'text'});
   }
 }
